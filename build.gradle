@@ -1,0 +1,24 @@
+plugins {
+    id "java-library"
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.seleniumhq.selenium:selenium-java:4.22.0'
+    implementation 'org.junit.jupiter:junit-jupiter:5.10.2'
+    implementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
+    implementation 'com.codeborne:selenide:7.3.3'
+    implementation 'com.codeborne:selenide-core:7.3.3'
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+   // systemProperty "chromeoptions.prefs", "intl.accept_languages=rus"
+    useJUnitPlatform()
+}
