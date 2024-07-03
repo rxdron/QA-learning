@@ -7,11 +7,13 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.seleniumhq.selenium:selenium-java:4.22.0'
-    implementation 'org.junit.jupiter:junit-jupiter:5.10.2'
-    implementation 'org.junit.jupiter:junit-jupiter-engine:5.10.2'
-    implementation 'com.codeborne:selenide:7.3.3'
-    implementation 'com.codeborne:selenide-core:7.3.3'
+    testImplementation(
+            'org.seleniumhq.selenium:selenium-java:4.22.0',
+            'org.junit.jupiter:junit-jupiter:5.10.2',
+            'org.junit.jupiter:junit-jupiter-engine:5.10.2',
+            'com.codeborne:selenide:7.3.3',
+            'com.codeborne:selenide-core:7.3.3'
+    )
 }
 
 tasks.withType(JavaCompile) {
