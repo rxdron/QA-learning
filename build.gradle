@@ -12,7 +12,8 @@ dependencies {
             'org.junit.jupiter:junit-jupiter:5.10.2',
             'org.junit.jupiter:junit-jupiter-engine:5.10.2',
             'com.codeborne:selenide:7.3.3',
-            'com.codeborne:selenide-core:7.3.3'
+            'com.codeborne:selenide-core:7.3.3',
+            'org.slf4j:slf4j-simple:2.0.13'
     )
 }
 
