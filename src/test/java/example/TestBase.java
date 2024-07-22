@@ -18,6 +18,7 @@ public class TestBase {
         Configuration.pageLoadStrategy = "none";
         //Configuration.pageLoadTimeout = 90000;
         Configuration.browser = "Chrome";
+        open("https://demoqa.com");
     }
 
 }

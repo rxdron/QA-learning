@@ -15,7 +15,6 @@ public class CheckBoxTest extends TestBase{
     @Test
     void checkBoxTest() {
         open("https://demoqa.com/checkbox");
-
         $$(".rct-title").filterBy(text("Home")).shouldHave(size(1));
         checkBox.clickCheckBoxHome();
         checkBox.verifyResultWithAllCheckBoxOn();

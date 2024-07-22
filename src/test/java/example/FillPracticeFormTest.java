@@ -23,7 +23,7 @@ public class FillPracticeFormTest extends TestBase {
 
 
     @Test
-    void fillPracticeForm(){
+    void fillPracticeForm (){
         open("https://demoqa.com/automation-practice-form");
         registrationStudy
                 .fillName(firstName, lastName)
