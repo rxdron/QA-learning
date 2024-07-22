@@ -1,6 +1,6 @@
 package application;
 
-import example.TestBase;
+
 
 import java.io.File;
 
@@ -9,24 +9,36 @@ import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 public class RegistrationStudy {
+    String goToFirstName = "#firstName";
+    String goToLastName = "#lastName";
+    String goToUserEmail = "#userEmail";
+    String goToUserNumber = "#userNumber";
+    String goToUserCurrentAddress = "#currentAddress";
+    String goToGender = "#genterWrapper";
+    String goToHobbies = "#hobbiesWrapper";
+    String goToSubject = "#subjectsInput";
+    String goToUpLoadPicture = "#uploadPicture";
+
+
     RegistrationStudyResult registrationStudy = new RegistrationStudyResult();
+
     public RegistrationStudy fillName(String firstName, String lastName) {
 
         $(".text-center").shouldHave(text("Practice Form"));
-        $("#firstName").setValue(firstName);
-        $("#lastName").setValue(lastName);
+        $(goToFirstName).setValue(firstName);
+        $(goToLastName).setValue(lastName);
         return this;
     }
     public RegistrationStudy fillUserContactInfo(String userEmail, String userNumber, String currentAddress){
-        $("#userEmail").setValue(userEmail);
-        $("#userNumber").setValue(userNumber);
-        $("#currentAddress").setValue(currentAddress);
+        $(goToUserEmail).setValue(userEmail);
+        $(goToUserNumber).setValue(userNumber);
+        $(goToUserCurrentAddress).setValue(currentAddress);
         return this;
     }
 
     public RegistrationStudy fillGenderAndHobbies(String gender, String hobbies){
-        $("#genterWrapper").$(byText(gender)).click();
-        $("#hobbiesWrapper").$(byText(hobbies)).click();
+        $(goToGender).$(byText(gender)).click();
+        $(goToHobbies).$(byText(hobbies)).click();
         return this;
     }
 
@@ -38,11 +50,11 @@ public class RegistrationStudy {
         return this;
     }
     public RegistrationStudy fillSubject(String subject){
-        $("#subjectsInput").setValue(subject).pressEnter();
+        $(goToSubject).setValue(subject).pressEnter();
         return this;
     }
     public RegistrationStudy uploadPicture(){
-        $("#uploadPicture").uploadFile(new File("src/test/resources/Screenshot_5.png"));
+        $(goToUpLoadPicture).uploadFile(new File("src/test/resources/Screenshot_5.png"));
         return this;
     }
 

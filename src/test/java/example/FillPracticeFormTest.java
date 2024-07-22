@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class FillPracticeForm extends TestBase {
+public class FillPracticeFormTest extends TestBase {
 
     String firstName = "Ars";
     String lastName = "Saluki";
