@@ -1,6 +1,9 @@
 package example;
 
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.Tag;
+import org.junit.jupiter.api.Tags;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static com.codeborne.selenide.Selenide.open;
 
@@ -12,8 +15,6 @@ public class FillPracticeFormTest extends TestBase {
     String userEmail = "beachhotel@gmial.com";
     String userNumber = "9964003352";
     String gender = "Female";
-    String hobbies = "Music";
-    String subject = "Computer science";
     String currentAddress = "UFA RB";
     String day = "1";
     String mount = "July";
@@ -22,8 +23,10 @@ public class FillPracticeFormTest extends TestBase {
     String city = "Jaipur";
 
 
-    @Test
-    void fillPracticeForm (){
+    @CsvFileSource(resources = "/testDataFillPracticeForm.csv")
+    @Tags({@Tag("UI Test"), @Tag("Critical")})
+    @ParameterizedTest(name = "Заполнение поля Subjects {0}, Заполнение поля Hobbies {1}")
+    void fillPracticeForm (String subject, String hobbies){
         open("https://demoqa.com/automation-practice-form");
         registrationStudy
                 .fillName(firstName, lastName)

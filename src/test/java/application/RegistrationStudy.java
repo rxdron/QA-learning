@@ -77,8 +77,3 @@ public class RegistrationStudy {
         $("#submit").click();
     }
 }
-
-/*$(byText("Thanks for submitting the form")).shouldHave(text("Thanks for submitting the form"));
-$(".table-responsive").shouldHave(text(firstName), text(lastName), text(userEmail), text(gender), text(userNumber),
-text("01 July,2000"), text("Computer Science"), text("Screenshot_5.png"), text(currentAddress),
-text("Rajasthan Jaipur"))*/
