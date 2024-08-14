@@ -2,6 +2,7 @@ package application;
 
 
 
+
 import java.io.File;
 
 import static com.codeborne.selenide.Condition.text;
@@ -31,7 +32,7 @@ public class RegistrationStudy {
     }
     public RegistrationStudy fillUserContactInfo(String userEmail, String userNumber, String currentAddress){
         $(goToUserEmail).setValue(userEmail);
-        $(goToUserNumber).setValue(userNumber);
+        $(goToUserNumber).setValue(String.valueOf(userNumber));
         $(goToUserCurrentAddress).setValue(currentAddress);
         return this;
     }
@@ -45,8 +46,8 @@ public class RegistrationStudy {
     public RegistrationStudy fillBirthday (String day, String month, String year){
         $("#dateOfBirthInput").click();
         $("[class*=\"month-dropdown-container\"]").$(byText(month)).click();
-        $("[class*=\"year-dropdown-container\"]").$(byText(year)).click();
-        $("[class=\"react-datepicker__month\"]").$(byText(day)).click();
+        $("[class*=\"year-dropdown-container\"]").$(byText(String.valueOf(year))).click();
+        $("[class=\"react-datepicker__month\"]").$(byText(String.valueOf(day))).click();
         return this;
     }
     public RegistrationStudy fillSubject(String subject){
@@ -70,7 +71,7 @@ public class RegistrationStudy {
     }
 
     public RegistrationStudy verifyResult(String key, String value) {
-        registrationStudy.verifyResult(key, value);
+        registrationStudy.verifyResult(key, String.valueOf(value));
         return this;
     }
     public void clickSubmit(){

@@ -5,22 +5,23 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
+
 import static com.codeborne.selenide.Selenide.open;
 
 
 public class FillPracticeFormTest extends TestBase {
-
-    String firstName = "Ars";
-    String lastName = "Saluki";
-    String userEmail = "beachhotel@gmial.com";
-    String userNumber = "9964003352";
+    String firstName = testData.firstName;
+    String lastName = testData.lastName;
+    String userEmail = testData.userEmail;
+    String userNumber = testData.userNumber;
     String gender = "Female";
-    String currentAddress = "UFA RB";
-    String day = "1";
-    String mount = "July";
-    String year = "2000";
+    String currentAddress = testData.currentAddress;
+    String day = testData.day;
+    String month = testData.month;
+    String year = testData.year;
     String state = "Rajasthan";
     String city = "Jaipur";
+    String dateBirth = String.format(day, month + "," + year);
 
 
     @CsvFileSource(resources = "/testDataFillPracticeForm.csv")
@@ -32,7 +33,7 @@ public class FillPracticeFormTest extends TestBase {
                 .fillName(firstName, lastName)
                 .fillUserContactInfo(userEmail, userNumber, currentAddress)
                 .fillGenderAndHobbies(gender, hobbies)
-                .fillBirthday(day, mount, year)
+                .fillBirthday(day, month, year)
                 .fillSubject(subject).
                 uploadPicture().fillCity(state, city)
                 .clickSubmit();
@@ -43,7 +44,7 @@ public class FillPracticeFormTest extends TestBase {
                 .verifyResult("Student Email", userEmail)
                 .verifyResult("Gender", gender)
                 .verifyResult("Mobile", userNumber)
-                .verifyResult("Date of Birth", "01 July,2000")
+                .verifyResult("Date of Birth", dateBirth)
                 .verifyResult("Subjects", subject)
                 .verifyResult("Hobbies", hobbies)
                 .verifyResult("Picture", "Screenshot_5.png")
