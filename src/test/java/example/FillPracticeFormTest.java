@@ -14,13 +14,13 @@ public class FillPracticeFormTest extends TestBase {
     String lastName = testData.lastName;
     String userEmail = testData.userEmail;
     String userNumber = testData.userNumber;
-    String gender = "Female";
+    String gender = testData.gender;
     String currentAddress = testData.currentAddress;
     String day = testData.day;
     String month = testData.month;
     String year = testData.year;
-    String state = "Rajasthan";
-    String city = "Jaipur";
+    String state = testData.state;
+    String city = testData.city;
     String dateBirth = String.format(day, month + "," + year);
 
 
