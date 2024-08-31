@@ -12,7 +12,7 @@ public class RadioButtonTest extends TestBase{
     String hoverRadioNo = "#noRadio";
     String selectImpressiveRadio = "#impressiveRadio";
     String resultWithRadioYes = "You have selected Yes";
-    String resultWithRadioImpressive = "You have selected Yes";
+    String resultWithRadioImpressive = "You have selected Impressive";
 
     @Test
     void selectRadioButtonTest(){

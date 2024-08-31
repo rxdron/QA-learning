@@ -3,6 +3,7 @@ package example;
 
 import application.RegistrationStudy;
 import com.codeborne.selenide.Configuration;
+import io.qameta.allure.Step;
 import org.junit.jupiter.api.BeforeAll;
 import randomData.TestData;
 
@@ -11,9 +12,10 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    RegistrationStudy registrationStudy = new RegistrationStudy();
-    TestData testData = new TestData();
+    public RegistrationStudy registrationStudy = new RegistrationStudy();
+    public TestData testData = new TestData();
     @BeforeAll
+    @Step("Подготовка к прохождению теста")
      static void setup(){
         Configuration.browserSize = "1920 x 1080";
         Configuration.pageLoadStrategy = "none";

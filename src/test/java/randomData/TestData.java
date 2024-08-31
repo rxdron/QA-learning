@@ -30,7 +30,8 @@ public class TestData {
     }
 
     protected String getRandomMonths() {
-        String[] months = {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        String[] months = {"January", "February", "March", "April", "May", "June", "July",
+                "August", "September", "October", "November", "December"};
         return months[randomNumberMouth() - 1];
     }
 
