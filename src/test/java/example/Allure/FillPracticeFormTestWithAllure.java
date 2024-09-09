@@ -1,6 +1,6 @@
 package example.Allure;
 
-import com.codeborne.selenide.Condition;
+
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -10,8 +10,8 @@ import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static io.qameta.allure.Allure.step;
 
 
@@ -43,7 +43,8 @@ public class FillPracticeFormTestWithAllure extends TestBaseExtend {
 
         step("Открываем страницу https://demoqa.com/automation-practice-form",
                 () -> open("https://demoqa.com/automation-practice-form"));
-        $("#adplus-anchor").shouldBe(Condition.disappear);
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('#adplus-anchor').remove()");
 
         registrationStudy
                 .fillName(FIRST_NAME, lastName)
