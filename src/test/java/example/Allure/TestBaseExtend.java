@@ -33,7 +33,7 @@ public class TestBaseExtend {
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "2560x1440";
+        Configuration.browserSize = "1920x1080";
         Configuration.browser = "chrome";
         Configuration.browserVersion = "126.0";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
