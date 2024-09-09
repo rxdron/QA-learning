@@ -12,6 +12,7 @@ import org.junit.jupiter.params.provider.CsvFileSource;
 import randomData.TestData;
 
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
 import static com.codeborne.selenide.Selenide.open;
 
 
@@ -38,6 +39,8 @@ public class FillPracticeFormTest extends TestBaseExtend {
     void fillPracticeForm (String subject, String hobbies){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         registrationStudy
                 .fillName(firstName, lastName)
                 .fillUserContactInfo(userEmail, userNumber, currentAddress)

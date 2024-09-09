@@ -16,6 +16,8 @@ public class CheckBoxTest extends TestBaseExtend {
     @Test
     void checkBoxTest() {
         open("https://demoqa.com/checkbox");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $$(".rct-title").filterBy(text("Home")).shouldHave(size(1));
         checkBox.clickCheckBoxHome();
         checkBox.verifyResultWithAllCheckBoxOn();

@@ -18,6 +18,8 @@ public class RadioButtonTest extends TestBaseExtend {
     @Test
     void selectRadioButtonTest(){
         open("https://demoqa.com/radio-button");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $(".text-center").shouldHave(text("Radio Button"));
         $(".mb-3").shouldHave(text("Do you like the site?"));
         $(selectRadioYes).sibling(0).click();
