@@ -1,13 +1,14 @@
 package example;
 
 import application.CheckBox;
+import example.Allure.TestBaseExtend;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.CollectionCondition.size;
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class CheckBoxTest extends TestBase{
+public class CheckBoxTest extends TestBaseExtend {
 
 
     CheckBox checkBox = new CheckBox();

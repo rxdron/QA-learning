@@ -1,11 +1,12 @@
 package example;
 
+import example.Allure.TestBaseExtend;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
 
-public class RadioButtonTest extends TestBase{
+public class RadioButtonTest extends TestBaseExtend {
 
     String result = ".mt-3";
     String selectRadioYes = "#yesRadio";

@@ -3,13 +3,14 @@ package example;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.DragAndDropOptions;
 import com.codeborne.selenide.Selenide;
+import example.Allure.TestBaseExtend;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class TestGoogle {
+public class TestGoogle extends TestBaseExtend {
 
     //@Test
     void successfulSearch() {

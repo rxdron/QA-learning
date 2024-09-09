@@ -1,18 +1,23 @@
 package example;
 
+import application.RegistrationStudy;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import example.Allure.TestBaseExtend;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Tags;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
+import randomData.TestData;
 
 
 import static com.codeborne.selenide.Selenide.open;
 
 
-public class FillPracticeFormTest extends TestBase {
+public class FillPracticeFormTest extends TestBaseExtend {
+    TestData testData = new TestData();
+    RegistrationStudy registrationStudy = new RegistrationStudy();
     String firstName = testData.firstName;
     String lastName = testData.lastName;
     String userEmail = testData.userEmail;
