@@ -20,12 +20,6 @@ public class TestBaseExtend {
 
     @BeforeAll
     static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "2560x1440";
-        Configuration.browser = "chrome";
-        Configuration.browserVersion = "126.0";
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,
@@ -38,6 +32,11 @@ public class TestBaseExtend {
     @BeforeEach
     void addListener() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+        Configuration.baseUrl = "https://demoqa.com";
+        Configuration.browserSize = "2560x1440";
+        Configuration.browser = "chrome";
+        Configuration.browserVersion = "126.0";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
     @AfterEach
