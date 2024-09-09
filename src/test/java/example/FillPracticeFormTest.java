@@ -1,8 +1,6 @@
 package example;
 
 import application.RegistrationStudy;
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import example.Allure.TestBaseExtend;
 import io.qameta.allure.selenide.AllureSelenide;
@@ -40,6 +38,7 @@ public class FillPracticeFormTest extends TestBaseExtend {
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('#adplus-anchor').remove()");
+        executeJavaScript("$('footer').remove()");
         registrationStudy
                 .fillName(firstName, lastName)
                 .fillUserContactInfo(userEmail, userNumber, currentAddress)
