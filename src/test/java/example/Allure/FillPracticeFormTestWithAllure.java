@@ -43,6 +43,8 @@ public class FillPracticeFormTestWithAllure extends TestBaseExtend {
 
         step("Открываем страницу https://demoqa.com/automation-practice-form",
                 () -> open("https://demoqa.com/automation-practice-form"));
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#adplus-anchor').remove()");
 
         registrationStudy
                 .fillName(FIRST_NAME, lastName)

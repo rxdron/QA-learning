@@ -36,6 +36,9 @@ public class FillPracticeFormTest extends TestBaseExtend {
     void fillPracticeForm (String subject, String hobbies){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('footer').remove()");
+        executeJavaScript("$('#adplus-anchor').remove()");
+
         registrationStudy
                 .fillName(firstName, lastName)
                 .fillUserContactInfo(userEmail, userNumber, currentAddress)

@@ -44,7 +44,7 @@ public class TestBaseExtend {
         Configuration.browserSize = "1920х1080";
         Configuration.browserVersion = "126.0";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-        removeElements();
+        Configuration.headless = true;
     }
 
     @AfterEach
