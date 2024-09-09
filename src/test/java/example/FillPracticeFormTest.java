@@ -38,6 +38,7 @@ public class FillPracticeFormTest extends TestBaseExtend {
         open("https://demoqa.com/automation-practice-form");
         executeJavaScript("$('footer').remove()");
         executeJavaScript("$('#adplus-anchor').remove()");
+        executeJavaScript("$('#fixedban').remove()");
 
         registrationStudy
                 .fillName(firstName, lastName)
