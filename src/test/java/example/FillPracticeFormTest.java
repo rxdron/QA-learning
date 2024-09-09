@@ -1,6 +1,7 @@
 package example;
 
 import application.RegistrationStudy;
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import example.Allure.TestBaseExtend;
@@ -11,9 +12,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import randomData.TestData;
 
-
-import static com.codeborne.selenide.Selenide.executeJavaScript;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 
 
 public class FillPracticeFormTest extends TestBaseExtend {
@@ -39,8 +38,8 @@ public class FillPracticeFormTest extends TestBaseExtend {
     void fillPracticeForm (String subject, String hobbies){
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         open("https://demoqa.com/automation-practice-form");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+        $("#fixedban").shouldBe(Condition.disappear);
+        $("#footer").shouldBe(Condition.disappear);
         registrationStudy
                 .fillName(firstName, lastName)
                 .fillUserContactInfo(userEmail, userNumber, currentAddress)
