@@ -4,7 +4,6 @@ package example.Allure;
 import Helper.Attach;
 import application.RegistrationStudy;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
@@ -40,7 +39,7 @@ public class TestBaseExtend {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "1920х1200";
         Configuration.browserVersion = "126.0";
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
