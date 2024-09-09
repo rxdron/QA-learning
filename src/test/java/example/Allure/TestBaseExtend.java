@@ -15,6 +15,8 @@ import randomData.TestData;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.executeJavaScript;
+
 public class TestBaseExtend {
     TestData testData = new TestData();
     RegistrationStudy registrationStudy = new RegistrationStudy();
@@ -51,5 +53,9 @@ public class TestBaseExtend {
         Attach.browserConsoleLogs();
         Attach.addVideo();
     }
-
+    public void removeElements() {
+        executeJavaScript("if ($('#fixedban').length > 0) { $('#fixedban').remove(); }");
+        executeJavaScript("if ($('#adplus-anchor').length > 0) { $('#adplus-anchor').remove(); }");
+        executeJavaScript("if ($('footer').length > 0) { $('footer').remove(); }");
+    }
 }
