@@ -1,7 +1,6 @@
 package example.Allure;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
-import example.TestBase;
 import io.qameta.allure.*;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.DisplayName;
@@ -14,7 +13,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
 
-public class FillPracticeFormTestWithAllure extends TestBase {
+public class FillPracticeFormTestWithAllure extends TestBaseExtend {
     public final String FIRST_NAME = testData.firstName;
     String lastName = testData.lastName;
     String userEmail = testData.userEmail;

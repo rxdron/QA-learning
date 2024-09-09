@@ -50,7 +50,10 @@ tasks.withType(JavaCompile) {
 }
 
 test {
-   // systemProperty "chromeoptions.prefs", "intl.accept_languages=rus"
+    systemProperty "chromeoptions.prefs", "intl.accept_languages=rus"
+    systemProperty 'file.encoding', 'utf-8'
     useJUnitPlatform()
     systemProperties(System.getProperties())
 }
+
+
